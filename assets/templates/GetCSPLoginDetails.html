@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{%load static%}
+{%block contents%}
+<div id="page-wrapper">
+<div id="page" class="container">
+	<div id="content" >
+        <div class="title">
+			<h2>Cloud Service Provider Get Login Details</h2>
+			<span class="byline">
+                <form method="POST" action="{%url 'GetCSPLoginData'%}">
+                {% csrf_token %}
+                <table>
+
+                    <tr><td>Email</td><td><input type="text" name="email"  required="True" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'> </td></tr>
+                    <tr><td>Mobile</td><td><input type="text" name="mobile" pattern='[56789][0-9]{9}' required="True"></td></tr>
+
+                    <tr><td><button  class="btn btn-outline-success my-2 my-sm-0" type="submit" style = "margin-left:20%;">Get Details</button></td></tr>
+
+                    <center>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='GREEN'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+                           </center>
+                </table>
+
+            </form>  </p>
+            </span>
+
+		</div>
+         <p class="byline">
+
+    </div>
+
+</div>
+</div>
+{%endblock%}

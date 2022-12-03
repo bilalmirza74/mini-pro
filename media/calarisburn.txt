@@ -1,0 +1,7 @@
+For men: 66 + (6.2 x weight) + (12.7 x height) - (6.76 x age)
+For women: 655.1 + (4.35 x weight) + (4.7 x height) - (4.7 x age)
+
+me = 66+(6.2X145)+(12.7X66) -(4.7X35)
+   = 66+899+838-164= 1639
+
+Calories Burn formula for daily

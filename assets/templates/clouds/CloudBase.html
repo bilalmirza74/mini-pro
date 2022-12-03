@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="{% static 'images/favicon.png'%}" type="image/png">
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="{%static 'default.css'%}" rel="stylesheet" type="text/css" media="all" />
+<link href="{%static 'fonts.css'%}" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript">
+	window.history.forward();
+	function noBack(){
+	window.history.forward();
+	}
+</script>
+</head>
+<body onload="noBack();"onPageShow="if(event.persisted) noBack();" onUnload="" >
+<div id="logo">
+	<h1><a href="#" class="icon icon-group"><span>Machine Learning based Presaging Technique</span></a></h1>
+</div>
+<div id="header">
+	<div id="menu" class="container">
+		<ul>
+			<li><a href="#" accesskey="1" title="">Homepage</a></li>
+			<li><a href="{%url 'CloudCustomers'%}" accesskey="1" title="">Customers</a></li>
+			<li><a href="{%url 'CloudCSPAdding'%}" accesskey="2" title="">CSP</a></li>
+			<li><a href="{%url 'CloudDataView'%}" accesskey="3" title="">Data View</a></li>
+			<li><a href="{%url 'Logout'%}" accesskey="4" title="">Log out</a></li>
+
+		</ul>
+	</div>
+</div>
+{%block contents%}
+
+{%endblock%}
+<div id="copyright" class="container">
+	<p>&copy; Alex and group of Corporations</p>
+</div>
+</body>
+</html>

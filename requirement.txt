@@ -1,0 +1,5 @@
+pip install faker
+pip install fuzzywuzzy
+pip install sklearn
+pip install sklearn.neighbors
+pip install KNeighborsClassifier

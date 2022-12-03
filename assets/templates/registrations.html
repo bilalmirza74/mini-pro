@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{%load static%}
+{%block contents%}
+<div id="page-wrapper">
+<div id="page" class="container">
+	<div id="content" >
+        <div class="title">
+			<h2>Cloud User Register Form</h2>
+			<span class="byline">
+                <form method="POST" action="{% url 'custRegistration' %}">
+                {% csrf_token %}
+                <table>
+                    <tr><td>Customer Name</td><td>{{form.name}}</td></tr>
+                    <tr><td>Login ID</td><td>{{form.loginid}}</td></tr>
+                    <tr><td>Password</td><td>{{form.password}}</td></tr>
+                    <tr><td>Mobile</td><td>{{form.mobile}}</td></tr>
+                    <tr><td>email</td><td>{{form.email}}</td></tr>
+                    <tr><td>Locality</td><td>{{form.locality}}</td></tr>
+                    <tr><td>Address</td><td>{{form.address}}</td></tr>
+                    <tr><td>City</td><td>{{form.city}}</td></tr>
+                    <tr><td>State</td><td>{{form.state}}</td></tr>
+                    <tr><td></td><td>{{form.status}}</td></tr>
+
+                    <tr><td><button  class="btn btn-outline-success my-2 my-sm-0" type="submit" style = "margin-left:20%;">Register</button></td></tr>
+                    <center>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='GREEN'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+                           </center>
+                </table>
+
+            </form>  </p><a class="nav-link" href="{%url 'CustLogin'%}">Customer Login</a>
+            </span>
+		</div>
+         <p class="byline">
+
+    </div>
+
+</div>
+</div>
+{%endblock%}

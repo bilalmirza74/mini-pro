@@ -1,0 +1,104 @@
+{% extends 'users/custbase.html'%}
+{%load static%}
+{%block contents%}
+
+<div id="page-wrapper">
+<div id="page" class="container">
+	<div id="content">
+		<div class="title">
+             <form method="post" action="{%url 'CustUploadData'%}" enctype="multipart/form-data">
+                        {%csrf_token%}
+
+  <table class="table table-bordered">
+    <tr>
+        <th>Fileds</th><th>Data</th>
+    </tr>
+      <tr><td>Data Type</td><td><input type="text" name="datatype" pattern='[a-zA-Z]+' required="True"> </td></tr>
+      <tr><td>Location</td><td><input type="text" name="location" pattern='[a-zA-Z]+' required="True"> </td></tr>
+      <tr>    <td>Select Service</td><td>
+          <select name="service" required="True">
+              <option value="">---Select Cloud Service---</option>
+              <option value="Microsoft Azure">Microsoft Azure </option>
+              <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS) </option>
+              <option value="Cisco Metacloud">Cisco Metacloud </option>
+              <option value="Google Compute Engine (GCE)">Google Compute Engine (GCE) </option>
+              <option value="AWS Elastic Beanstalk">AWS Elastic Beanstalk </option>
+              <option value="Apache Stratos">Apache Stratos </option>
+              <option value="Google App Engine">Google App Engine </option>
+              <option value="Microsoft Office 365">Microsoft Office 365 </option>
+              <option value="Salesforce">Salesforce </option>
+              <option value="Cisco WebEx">Cisco WebEx </option>
+              <option value="Google Apps">Google Apps </option>
+
+          </select>
+      </td>
+      </tr>
+      <tr>
+          <td>Select File</td><td><input type="file" name="file" required="True"></td>
+      </tr>
+      <tr><td></td><td><button type="submit" class="btn-primary" name="Submit">Submit</button> </td></tr>
+  </table>
+         </form>
+            <center>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='Green'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+                           </center>
+		</div>
+		<p></p>
+
+	</div>
+    <p>Plans Here Suggested us
+    <table>
+    <tr>
+<th>Service Name</th>
+        <th>Expcted Price</th>
+    </tr>
+    {%for key,values in dict.items%}
+    <tr>
+        <td>{{key}}</td>
+        <td>${{values}}</td>
+    </tr>
+    {%endfor%}
+</table>
+    </p>
+    <hr>
+     <p>Suggested based on your History
+    <table>
+    <tr>
+       <th>Service Name</th>
+        <th>No of times used</th>
+    </tr>
+    {%for key,values in hisDict.items%}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{values}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+
+<em>=============================================</em>
+    <h2>Suggestions based On Knn Algorithm</h2>
+    <table>
+    <tr>
+       <th>Service Name</th>
+        <th>Distance</th>
+    </tr>
+
+    {%for key,values in knndict.items%}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{values}}</td>
+    </tr>
+    {%endfor%}
+</table>
+    <stron >Note:</stron><p> Here we took some sample dataset which is associated with movies and ther ranks, we established the connection  to cloud services with the movies dataset </p>
+    </p>
+
+	<div id="sidebar"><a href="#" class="image image-full"><img src="{%static 'images/cspservice.jpg'%}" alt="" /></a></div>
+</div>
+</div>
+{%endblock%}

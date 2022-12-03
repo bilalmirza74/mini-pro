@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{%load static%}
+{%block contents%}
+<div id="page-wrapper">
+<div id="page" class="container">
+	<div id="content" >
+        <div class="title">
+			<h2>Cloud User Login Form</h2>
+			<span class="byline">
+                <form method="POST" action="{%url 'UserLoginCheck'%}">
+                {% csrf_token %}
+                <table>
+
+                    <tr><td>Login ID</td><td><input type="text" name="loginname" pattern="[a-zA-Z]+" required="True"> </td></tr>
+                    <tr><td>Password</td><td><input type="password" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="True"></td></tr>
+
+                    <tr><td><button  class="btn btn-outline-success my-2 my-sm-0" type="submit" style = "margin-left:20%;">Login</button></td></tr>
+                    <center>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='GREEN'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+                           </center>
+                </table>
+
+            </form>  </p><a class="nav-link" href="{%url 'custRegistration'%}">Customer Registration</a>
+            </span>
+		</div>
+         <p class="byline">
+
+    </div>
+
+</div>
+</div>
+{%endblock%}

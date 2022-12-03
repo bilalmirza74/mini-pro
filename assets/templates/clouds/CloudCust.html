@@ -1,0 +1,54 @@
+{% extends 'clouds/CloudBase.html'%}
+{%load static%}
+{%block contents%}
+<div id="page-wrapper">
+    <div class="container" id="page">
+        <div id="content">
+            <div class="title">
+                <h2>Cloud Admin View Register Users</h2>
+                <span class="byline">
+                </span>
+            </div>
+               <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Login ID</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Locality</th>
+        <th>Status</th>
+        <th>Activate</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in cust %}
+                                            <tr style="color: Black">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.loginid}}</td>
+                                                <td>{{i.mobile}}</td>
+                                                <td>{{i.email}}</td>
+                                                <td>{{i.locality}}</td>
+                                                <td>{{i.status}}</td>
+
+                                                {% if i.status == 'waiting' %}
+                                                <td><a class="btn-link" href="/CloudActivateUsers/?uid={{ i.id }}"
+                                                       style="color:DARKBLUE">Activate</a></td>
+                                                {% else %}
+                                                <td> Activated</td>
+                                                {% endif %}
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+  </table>
+
+            <p class="byline">
+
+        </div>
+
+    </div>
+</div>
+{%endblock%}

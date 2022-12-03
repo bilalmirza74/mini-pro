@@ -1,0 +1,97 @@
+{% extends 'clouds/CloudBase.html'%}
+{%load static%}
+{%block contents%}
+<div id="page-wrapper">
+    <div class="container" id="page">
+        <div id="content">
+            <div class="title">
+                <h2>Cloud Admin Adding Csp users</h2>
+                <span class="byline">
+                    <h5>CPS User</h5>
+                    <form method="post" action="{%url 'CloudCreateCsp'%}">
+                        {%csrf_token%}
+                        <div class="table-responsive">
+  <table class="table">
+    <tr>
+        <th>Fileds</th><th>Data</th>
+    </tr>
+      <tr><td>Name</td><td><input type="text" name="cspname" pattern='[a-zA-Z]+' required="True"> </td></tr>
+      <tr><td>Login ID</td><td><input type="text" name="loginid" pattern='[a-zA-Z]+' required="True"> </td></tr>
+      <tr>    <td>Mobile</td><td><input type="text" name="mobile" pattern='[56789][0-9]{9}' required="True"> </td></tr>
+      <tr>    <td>Email</td><td><input type="text" name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' required="True"> </td></tr>
+      <tr><td>Location</td><td><input type="text" name="location" pattern='[a-zA-Z]+' required="True"> </td></tr>
+      <tr>    <td>Service</td><td>
+          <select name="service" required="True">
+              <option value="">---Select Cloud Service---</option>
+              <option value="Microsoft Azure">Microsoft Azure </option>
+              <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS) </option>
+              <option value="Cisco Metacloud">Cisco Metacloud </option>
+              <option value="Google Compute Engine (GCE)">Google Compute Engine (GCE) </option>
+              <option value="AWS Elastic Beanstalk">AWS Elastic Beanstalk </option>
+              <option value="Apache Stratos">Apache Stratos </option>
+              <option value="Google App Engine">Google App Engine </option>
+              <option value="Microsoft Office 365">Microsoft Office 365 </option>
+              <option value="Salesforce">Salesforce </option>
+              <option value="Cisco WebEx">Cisco WebEx </option>
+              <option value="Google Apps">Google Apps </option>
+
+          </select>
+      </td>
+      </tr>
+      <tr><td></td><td><button type="submit" class="btn-primary" name="Submit">Submit</button> </td></tr>
+  </table>
+</div>
+
+                    </form>
+                    <center>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='RED'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+                           </center>
+                </table>
+
+                </span>
+            </div>
+               <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Login ID</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Service</th>
+        <th>Created Date</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in csp %}
+                                            <tr style="color: Black">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.loginid}}</td>
+                                                <td>{{i.mobile}}</td>
+                                                <td>{{i.email}}</td>
+                                                <td>{{i.locality}}</td>
+                                                <td>{{i.service}}</td>
+                                                <td>{{i.cdate}}</td>
+                                                <td style="font:BOLD">{{i.price}}</td>
+
+
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+  </table>
+
+            <p class="byline">
+
+        </div>
+
+    </div>
+</div>
+{%endblock%}

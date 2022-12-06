@@ -1,45 +1,44 @@
-{% extends 'users/custbase.html'%}
-{%load static%}
-{%block contents%}
+{% extends 'users/custbase.html'%} {%load static%} {%block contents%}
 <div id="page-wrapper">
-<div id="page" class="container">
-	<div id="content">
-		<div class="title">
-			<h2>Customer View Uploaded  Data</h2>
-			<span class="byline">Pay What you use</span>
-		</div>
- <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>S.No</th>
-        <th>Name</th>
-        <th>Email ID</th>
-        <th>Location</th>
-        <th>Cloud Service Name</th>
-        <th>File name</th>
-        <th>Uploaded Date</th>
-        <th>Download</th>
-      </tr>
-    </thead>
-    <tbody>
-    {% for i in data %}
-                                            <tr style="color: Black">
-                                                <td>{{forloop.counter}}</td>
-                                                <td>{{i.custname}}</td>
-                                                <td>{{i.email}}</td>
-                                                <td>{{i.location}}</td>
-                                                <td>{{i.servicename}}</td>
-                                                <td>{{i.filename}}</td>
-                                                <td>{{i.cdate}}</td>
-                                                <td><a class="btn-link" href="{{ i.file }}" target="_blank">Download</a></td>
-                                            </tr>
-                                            {% endfor %}
-
-    </tbody>
-  </table>
-
-	</div>
-
-</div>
+  <div id="page" class="container">
+    <div id="content">
+      <div class="title">
+        <h2>Customer View Uploaded Data</h2>
+        <span class="byline">Pay What you use</span>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Location</th>
+            <th>Cloud Service Name</th>
+            <th>File name</th>
+            <th>Uploaded Date</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in data %}
+          <tr style="color: Black">
+            <td>{{forloop.counter}}</td>
+            <td>{{i.custname}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.servicename}}</td>
+            <td>{{i.filename}}</td>
+            <td>{{i.cdate}}</td>
+            <td>
+              <a class="btn-link" href="{{ i.file }}" target="_blank"
+                >Download</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 {%endblock%}

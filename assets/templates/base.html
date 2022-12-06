@@ -2,43 +2,71 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="icon" href="{% static 'images/favicon.png'%}" type="image/png">
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="{%static 'default.css'%}" rel="stylesheet" type="text/css" media="all" />
-<link href="{%static 'fonts.css'%}" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript">
-	window.history.forward();
-	function noBack(){
-	window.history.forward();
-	}
-</script>
-</head>
-<body onload="noBack();"onPageShow="if(event.persisted) noBack();" onUnload="" >
-<div id="logo">
-	<h1><a href="#" class="icon icon-group"><span>Machine Learning based Presaging Technique</span></a></h1>
-</div>
-<div id="header">
-	<div id="menu" class="container">
-		<ul>
-			<li><a href="{%url 'index'%}" accesskey="1" title="">Homepage</a></li>
-			<li><a href="{%url 'CustLogin'%}" accesskey="1" title="">Customer</a></li>
-			<li><a href="{%url 'CspLogin'%}" accesskey="2" title="">CSP</a></li>
-			<li><a href="{%url 'CloudLogin'%}" accesskey="3" title="">Cloud Admin</a></li>
-			<li><a href="{%url 'custRegistration'%}" accesskey="4" title="">Registrations</a></li>
-
-		</ul>
-	</div>
-</div>
-{%block contents%}
-
-{%endblock%}
-<div id="copyright" class="container">
-	<p>&copy; Mini-Project (Ali) CSM-B❤️</p>
-</div>
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="{% static 'images/favicon.png'%}" type="image/png" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="{%static 'default.css'%}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{%static 'fonts.css'%}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <script type="text/javascript">
+      window.history.forward();
+      function noBack() {
+        window.history.forward();
+      }
+    </script>
+  </head>
+  <body
+    onload="noBack();"
+    onPageShow="if(event.persisted) noBack();"
+    onUnload=""
+  >
+    <div id="logo">
+      <h1>
+        <a href="#" class="icon icon-group"
+          ><span>Machine Learning based Presaging Technique</span></a
+        >
+      </h1>
+    </div>
+    <div id="header">
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="{%url 'index'%}" accesskey="1" title="">Homepage</a></li>
+          <li>
+            <a href="{%url 'CustLogin'%}" accesskey="1" title="">Customer</a>
+          </li>
+          <li><a href="{%url 'CspLogin'%}" accesskey="2" title="">CSP</a></li>
+          <li>
+            <a href="{%url 'CloudLogin'%}" accesskey="3" title=""
+              >Cloud Admin</a
+            >
+          </li>
+          <li>
+            <a href="{%url 'custRegistration'%}" accesskey="4" title=""
+              >Registrations</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    {%block contents%} {%endblock%}
+    <div id="copyright" class="container">
+      <p>&copy; Mini-Project (Ali) CSM-B❤️</p>
+    </div>
+  </body>
 </html>

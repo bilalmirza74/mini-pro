@@ -40,15 +40,14 @@
   </table>
          </form>
             <center>
-                        {% if messages %}
-                               {% for message in messages %}
-                                  <font color='Green'> {{ message }}</font>
-                               {% endfor %}
-                           {% endif %}
-                           </center>
+            {% if messages %}
+            {% for message in messages %}
+            <font color='Green'> {{ message }}</font>
+            {% endfor %}
+            {% endif %}
+            </center>
 		</div>
 		<p></p>
-
 	</div>
     <p>Plans Here Suggested us
     <table>
@@ -78,7 +77,6 @@
     </tr>
     {%endfor%}
 </table>
-
 
 <em>=============================================</em>
     <h2>Suggestions based On Knn Algorithm</h2>

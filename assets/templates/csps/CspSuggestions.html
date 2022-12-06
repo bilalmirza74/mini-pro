@@ -24,23 +24,19 @@
     </thead>
     <tbody>
     {% for i in data %}
-                                            <tr style="color: Black">
-                                                <td>{{forloop.counter}}</td>
-                                                <td>{{i.username}}</td>
-                                                <td>{{i.email}}</td>
-                                                <td>{{i.servicename}}</td>
-                                                <td>{{i.knnsuggestions}}</td>
-                                                <td>{{i.distance}}</td>
-                                                <td>{{i.cdate}}</td>
-
-                                            </tr>
-                                            {% endfor %}
-
+      <tr style="color: Black">
+      <td>{{forloop.counter}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.servicename}}</td>
+      <td>{{i.knnsuggestions}}</td>
+      <td>{{i.distance}}</td>
+      <td>{{i.cdate}}</td>
+      </tr>
+      {% endfor %}
     </tbody>
   </table>
-
-
-        </p>
+    </p>
 	</div>
 
 </div>

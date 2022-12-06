@@ -42,19 +42,18 @@
   </table>
 </div>
 
-                    </form>
-                    <center>
-                        {% if messages %}
-                               {% for message in messages %}
-                                  <font color='RED'> {{ message }}</font>
-                               {% endfor %}
-                           {% endif %}
-                           </center>
-                </table>
-
-                </span>
-            </div>
-               <table class="table table-bordered">
+    </form>
+    <center>
+        {% if messages %}
+        {% for message in messages %}
+        <font color='RED'> {{ message }}</font>
+        {% endfor %}
+        {% endif %}
+    </center>
+    </table>
+    </span>
+    </div>
+        <table class="table table-bordered">
     <thead>
       <tr>
         <th>S.No</th>
@@ -70,28 +69,23 @@
     </thead>
     <tbody>
     {% for i in csp %}
-                                            <tr style="color: Black">
-                                                <td>{{forloop.counter}}</td>
-                                                <td>{{i.name}}</td>
-                                                <td>{{i.loginid}}</td>
-                                                <td>{{i.mobile}}</td>
-                                                <td>{{i.email}}</td>
-                                                <td>{{i.locality}}</td>
-                                                <td>{{i.service}}</td>
-                                                <td>{{i.cdate}}</td>
-                                                <td style="font:BOLD">{{i.price}}</td>
-
-
-                                            </tr>
-                                            {% endfor %}
+        <tr style="color: Black">
+        <td>{{forloop.counter}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.loginid}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.locality}}</td>
+        <td>{{i.service}}</td>
+        <td>{{i.cdate}}</td>
+        <td style="font:BOLD">{{i.price}}</td>
+    </tr>
+    {% endfor %}
 
     </tbody>
-  </table>
-
-            <p class="byline">
-
-        </div>
-
+    </table>
+    <p class="byline">
+    </div>
     </div>
 </div>
 {%endblock%}
